@@ -1,0 +1,38 @@
+<html>
+<head>
+  <title>File Upload</title>
+</head>
+<body>
+    
+    <form action="" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" />
+        <input type="submit" value="提交" /> 最大支持上传15M图片
+    </form>
+    <label for="name">原始链接:</label>
+    <input type="text" id="link_0" name="link_0" required
+       minlength="4" maxlength="8" size="120" value="{{ url_0 }}">  <input type="button" value="复制" onclick="Copy0()"> <br>
+    <label for="name">BBCode:</label>
+    <input type="text" id="link_1" name="link_1" required
+       minlength="4" maxlength="8" size="120" value="{{ url_1 }}">  <input type="button" value="复制" onclick="Copy1()">    
+<script>
+function Copy0(){
+	var e=document.getElementById("link_0");//对象是content
+	if (e.value != "") {
+		e.select();//选择对象
+		document.execCommand("Copy");//执行浏览器复制命令
+	}else{
+		alert("内容为空！");
+	}
+}
+function Copy1(){
+	var e=document.getElementById("link_1");//对象是content
+	if (e.value != "") {
+		e.select();//选择对象
+		document.execCommand("Copy");//执行浏览器复制命令
+	}else{
+		alert("内容为空！");
+	}
+}
+</script>
+</body>
+</html>
